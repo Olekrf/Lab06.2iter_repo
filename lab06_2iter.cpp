@@ -1,20 +1,35 @@
 #include <iostream>
 #include <iomanip>
+#include <time.h>
 
 using namespace std;
 void Print(int* a, const int size);
 int Max(int* a, const int size);
+void Create(int* r, const int size, const int Low, const int High);
 
 int main()
 {
-    const int n = 20;
-    int a[n] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,21};
-    cout << "a:git a";
+    srand((unsigned)time(NULL));
+
+    const int n = 10;
+    int a[n];
+
+    int Low = 0;
+    int High = 100;
+
+    Create(a, n, Low, High);
+    cout << "a:";
     Print(a, n);
     cout << "imax = " << Max(a,n) << endl;
 
     return 0;
 }
+void Create(int* r, const int size, const int Low, const int High)
+{
+    for (int i = 0; i < size; i++)
+        r[i] = Low + rand() % (High - Low + 1);
+}
+
 void Print(int* a, const int size)
 {
     for (int i = 0; i < size; i++)

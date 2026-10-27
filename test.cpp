@@ -7,6 +7,6 @@
 int Max(int* a, const int size);
 
 TEST(MaxTest, FindMaxEvenElementIndex) {
-    int a[] = {1, 4, 3, 8, 5}; // Найбільший парний - 8, його індекс - 3
+    int a[] = {1, 4, 3, 8, 5};
     EXPECT_EQ(Max(a, 5), 3);
 }
